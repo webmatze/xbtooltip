@@ -1,5 +1,5 @@
 do (window, document) ->
-  
+
   class XBTooltip
     constructor: (@element, userConf, @tooltip) ->
       @config =
@@ -8,7 +8,7 @@ do (window, document) ->
         x: userConf.x or 20
         y: userConf.y or 20
         text: userConf.text or `undefined`
-        
+
       if @tooltip is `undefined` and @config.id
         @tooltip = document.getElementById(@config.id)
         @tooltip = @tooltip.parentNode.removeChild(@tooltip) if @tooltip
@@ -22,7 +22,7 @@ do (window, document) ->
       @element.onmouseover = @over
       @element.onmouseout = @out
       @element.onmousemove = @move
-      @over()
+      @out()
 
     over: (event) =>
       @tooltip.style.display = "block"
@@ -39,6 +39,6 @@ do (window, document) ->
         event.pageY = event.clientY + (doc and doc.scrollTop or body and body.scrollTop or 0) - (doc and doc.clientTop or body and body.clientTop or 0)
       @tooltip.style.top = (event.pageY + @config.y) + "px"
       @tooltip.style.left = (event.pageX + @config.x) + "px"
-      
-  window.XBT = XBTooltip
+
+  window.XBTooltip = XBTooltip
 

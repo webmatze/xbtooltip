@@ -39,7 +39,7 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
       this.element.onmouseover = this.over;
       this.element.onmouseout = this.out;
       this.element.onmousemove = this.move;
-      this.over();
+      this.out();
     }
 
     XBTooltip.prototype.over = function(event) {
@@ -66,5 +66,5 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
     return XBTooltip;
 
   })();
-  return window.XBT = XBTooltip;
+  return window.XBTooltip = XBTooltip;
 })(window, document);

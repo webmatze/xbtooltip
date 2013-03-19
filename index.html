@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XBTooltip Test</title>
+</head>
+<body>
+  <h1>XBTooltip Test Page</h1>
+  <p>Move you mouse pointer over any of the following links to see the script in action.</p>
+  <a href="https://github.com/webmatze/xbtooltip" id="test">Find out more about this script</a>
+  <script type="text/javascript" src="tooltip.js"></script>
+  <script type="text/javascript">
+  window.onload = function() {
+    var test_link = document.getElementById("test");
+    var tooltip = new XBTooltip(test_link, {
+      text: "XBTooltip on GitHub"
+    });
+  }
+  </script>
+</body>
+</html>
